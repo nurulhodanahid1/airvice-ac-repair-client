@@ -5,12 +5,12 @@ import { Card, Col, Row, Container } from 'react-bootstrap';
 const ManageProducts = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch("https://morning-castle-00405.herokuapp.com/products")
+        fetch("http://localhost:5000/services")
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
     const handleDeleteProduct = (id) => {
-        fetch(`https://morning-castle-00405.herokuapp.com/deleteProduct/${id}`, {
+        fetch(`http://localhost:5000/deleteService/${id}`, {
             method: "DELETE"
         })
             .then(res => res.json())

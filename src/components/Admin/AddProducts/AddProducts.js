@@ -16,7 +16,7 @@ const AddProducts = () => {
             imageURL: imageURL
         };
         console.log("data", productData);
-        const url = `https://morning-castle-00405.herokuapp.com/addProducts`;
+        const url = `http://localhost:5000/addServices`;
         fetch(url, {
             method: 'POST',
             headers: {

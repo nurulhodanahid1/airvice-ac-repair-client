@@ -9,7 +9,7 @@ const Checkout = () => {
     const [products, setProducts] = useState([]);
     const [userOrders, setUserOrders] = useState();
     useEffect(() => {
-        fetch("https://morning-castle-00405.herokuapp.com/products")
+        fetch("http://localhost:5000/products")
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
@@ -18,7 +18,7 @@ const Checkout = () => {
     const handleOrderCheckout = () => {
         const newOrder = { ...signInUser, ...productDetail, orderDate };
         delete newOrder._id;
-        fetch('https://morning-castle-00405.herokuapp.com/addOrders', {
+        fetch('http://localhost:5000/addOrders', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
