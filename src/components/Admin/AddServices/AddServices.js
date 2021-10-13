@@ -4,7 +4,7 @@ import {useState} from 'react';
 import axios from "axios";
 import { Col, Row } from 'react-bootstrap';
 
-const Addservices = () => {
+const AddServices = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const [imageURL, setImageURL] = useState(null);
     console.log("img", imageURL)
@@ -12,6 +12,7 @@ const Addservices = () => {
     const onSubmit = data => {
         const serviceData = {
             name: data.name,
+            description: data.description,
             price: data.price,
             imageURL: imageURL
         };
@@ -54,6 +55,11 @@ const Addservices = () => {
                 </Row>
                 <hr />
                 <Row>
+                    <Col><h5>service description:</h5></Col>
+                    <Col><input defaultValue="Our awesome service" name="description" {...register("description")} /></Col>
+                </Row>
+                <hr />
+                <Row>
                     <Col><h5>Add image:</h5></Col>
                     <Col><input type="file" onChange={handleImageUpload} /></Col>
                 </Row>
@@ -73,4 +79,4 @@ const Addservices = () => {
     );
 };
 
-export default Addservices;
+export default AddServices;

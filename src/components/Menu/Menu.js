@@ -18,15 +18,15 @@ const Menu = () => {
                         <Nav className="justify-content-center align-items-center">
                             <Nav.Link><Link className="menu-item" to="/home">Home</Link></Nav.Link>
                             <Nav.Link><Link className="menu-item" to="/orders">Orders</Link></Nav.Link>
+                            <Nav.Link><Link className="menu-item" to="/reviews">Reviews</Link></Nav.Link>
                             <Nav.Link><Link className="menu-item" to="/admin">Admin</Link></Nav.Link>
-                            <Nav.Link><Link className="menu-item" to="/deals">Deals</Link></Nav.Link>
                             {
                                 signInUser.email ? <Link className="menu-btn" to="/home"><Button className="login-button" onClick={()=>setSignInUser({})} variant="success">Log out</Button></Link>
                                 : <Link className="menu-btn" to="login"><Button className="login-button btn btn-success">Log in</Button></Link>
                             }
                             {
                                 signInUser.name && <Navbar.Text>
-                                    <Link className="profile" to="/profile">{signInUser.photo}</Link>
+                                    <Link className="profile" to="/profile"><img src={signInUser.photo} alt="" /></Link>
                             </Navbar.Text>
                             }
                         </Nav>

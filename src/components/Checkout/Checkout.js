@@ -5,18 +5,17 @@ import { UserContext } from '../../App';
 
 const Checkout = () => {
     const [signInUser, setSignInUser] = useContext(UserContext);
-    const { productId } = useParams();
-    const [products, setProducts] = useState([]);
-    const [userOrders, setUserOrders] = useState();
+    const { serviceId } = useParams();
+    const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/products")
+        fetch("http://localhost:5000/services")
             .then(res => res.json())
-            .then(data => setProducts(data))
+            .then(data => setServices(data))
     }, []);
-    const productDetail = products.find(product => product._id === productId);
+    const serviceDetail = services.find(service => service._id === serviceId);
     const orderDate = new Date();
     const handleOrderCheckout = () => {
-        const newOrder = { ...signInUser, ...productDetail, orderDate };
+        const newOrder = { ...signInUser, ...serviceDetail, orderDate };
         delete newOrder._id;
         fetch('http://localhost:5000/addOrders', {
             method: 'POST',
@@ -43,14 +42,14 @@ const Checkout = () => {
                         </Row>
                         <hr />
                         <Row>
-                            <Col><h5>{productDetail?.name}</h5></Col>
+                            <Col><h5>{serviceDetail?.name}</h5></Col>
                             <Col><h5>1</h5></Col>
-                            <Col><h5>${productDetail?.price}</h5></Col>
+                            <Col><h5>${serviceDetail?.price}</h5></Col>
                         </Row>
                         <hr />
                         <Row>
                             <Col xs={12} md={8}><h5>Total</h5></Col>
-                            <Col xs={6} md={4}><h5>${productDetail?.price}</h5></Col>
+                            <Col xs={6} md={4}><h5>${serviceDetail?.price}</h5></Col>
                         </Row>
                     </Card.Body>
                 </Card>

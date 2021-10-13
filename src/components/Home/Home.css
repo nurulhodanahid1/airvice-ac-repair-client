@@ -4,6 +4,12 @@ body {
 .card-gap{
     margin-bottom:20px;
 }
-.loading{
-    margin-top: 30px;
+.service-area{
+    background-color: #122A48;
+}
+.service-area h2{
+    color: #fff;
+    font-size: 45px;
+    font-weight:700;
+    margin: 50px 0;
 }
