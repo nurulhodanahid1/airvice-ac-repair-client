@@ -1,10 +1,10 @@
 import React from 'react';
 import { Card, Button, Col, Row } from 'react-bootstrap';
-import './Product.css'
+import './Service.css'
 
-const Product = (props) => {
-    const { name, price, imageURL, _id } = props.product;
-    const handleProductSelect = props.handleProductSelect;
+const Service = (props) => {
+    const { name, price, imageURL, _id } = props.service;
+    const handleServiceSelect = props.handleServiceSelect;
     return (
         <div className="col-md-4 card-gap">
             <Card style={{ width: '18rem' }}>
@@ -13,7 +13,7 @@ const Product = (props) => {
                     <Card.Title>{name}</Card.Title>
                     <Row>
                         <Col><h4 className="pd-price">${price}</h4></Col>
-                        <Col><Button onClick={()=>handleProductSelect(_id)} variant="success">Buy now</Button></Col>
+                        <Col><Button onClick={()=>handleServiceSelect(_id)} variant="success">Buy now</Button></Col>
                     </Row>
                 </Card.Body>
             </Card>
@@ -21,4 +21,4 @@ const Product = (props) => {
     );
 };
 
-export default Product;
+export default Service;

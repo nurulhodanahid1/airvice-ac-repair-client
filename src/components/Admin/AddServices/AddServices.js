@@ -4,25 +4,25 @@ import {useState} from 'react';
 import axios from "axios";
 import { Col, Row } from 'react-bootstrap';
 
-const AddProducts = () => {
+const Addservices = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const [imageURL, setImageURL] = useState(null);
     console.log("img", imageURL)
 
     const onSubmit = data => {
-        const productData = {
+        const serviceData = {
             name: data.name,
             price: data.price,
             imageURL: imageURL
         };
-        console.log("data", productData);
+        console.log("data", serviceData);
         const url = `http://localhost:5000/addServices`;
         fetch(url, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(productData)
+            body: JSON.stringify(serviceData)
         })
         .then(res => console.log("server site response successfully", res))
     };
@@ -45,11 +45,11 @@ const AddProducts = () => {
     };
     return (
         <div>
-            <h3>Add your products</h3>
+            <h3>Add your services</h3>
             <hr />
             <form onSubmit={handleSubmit(onSubmit)}>
                 <Row>
-                    <Col><h5>Product name:</h5></Col>
+                    <Col><h5>service name:</h5></Col>
                     <Col><input defaultValue="New exiting event" name="name" {...register("name")} /></Col>
                 </Row>
                 <hr />
@@ -73,4 +73,4 @@ const AddProducts = () => {
     );
 };
 
-export default AddProducts;
+export default Addservices;

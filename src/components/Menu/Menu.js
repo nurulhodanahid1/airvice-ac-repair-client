@@ -26,7 +26,7 @@ const Menu = () => {
                             }
                             {
                                 signInUser.name && <Navbar.Text>
-                                    <Link className="profile" to="/profile"><img src={signInUser.photo} alt="" /></Link>
+                                    <Link className="profile" to="/profile">{signInUser.photo}</Link>
                             </Navbar.Text>
                             }
                         </Nav>

@@ -1,34 +1,32 @@
 import React, { useState, useEffect } from 'react';
-import Product from '../Product/Product';
+import Service from '../Service/Service';
 import { Row, Spinner, Col, InputGroup, FormControl } from 'react-bootstrap';
 import './Home.css';
 import { useHistory } from 'react-router-dom';
 import Main from './Main/Main';
-import Services from './Services/Services';
 
 const Header = () => {
-    const [products, setProducts] = useState([]);
+    const [services, setServices] = useState([]);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
         fetch("http://localhost:5000/services")
             .then(response => response.json())
             .then(data => {
-                setProducts(data);
+                setServices(data);
                 setLoading(false);
             })
     }, []);
 
     const history = useHistory();
-    const handleProductSelect = id => {
+    const handleServiceSelect = id => {
         history.push(`/checkout/${id}`)
     }
     return (
         <main>
             <Main></Main>
-            <Services></Services>
             {/* <form className="col-md-6 m-auto py-5">
                 <div className="input-group mb-3">
-                    <input type="text" name="" id="" className="form-control" placeholder="Search your products" />
+                    <input type="text" name="" id="" className="form-control" placeholder="Search your Services" />
                     <div className="input-group-append">
                         <button id="find-meal" type="button" className="btn btn-success">Search</button>
                     </div>
@@ -43,7 +41,7 @@ const Header = () => {
                     </Row> :
                     <Row>
                         {
-                            products.map(product => <Product handleProductSelect={handleProductSelect} key={product._id} product={product}></Product>)
+                            services.map(service => <Service handleServiceSelect={handleServiceSelect} key={service._id} service={service}></Service>)
                         }
                     </Row>
             }

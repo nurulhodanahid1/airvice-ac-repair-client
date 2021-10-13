@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import ManageProduct from '../ManageProduct/ManageProduct';
+import ManageService from '../ManageService/ManageService';
 import { Card, Col, Row, Container } from 'react-bootstrap';
 
-const ManageProducts = () => {
-    const [products, setProducts] = useState([]);
+const ManageServices = () => {
+    const [Services, setServices] = useState([]);
     useEffect(() => {
         fetch("http://localhost:5000/services")
             .then(res => res.json())
-            .then(data => setProducts(data))
+            .then(data => setServices(data))
     }, []);
-    const handleDeleteProduct = (id) => {
+    const handleDeleteService = (id) => {
         fetch(`http://localhost:5000/deleteService/${id}`, {
             method: "DELETE"
         })
@@ -22,7 +22,7 @@ const ManageProducts = () => {
     }
     return (
         <div>
-            <h3>Manage products</h3>
+            <h3>Manage Services</h3>
             <Container>
                 <Card style={{ width: '50rem' }}>
                     <Card.Body>
@@ -34,7 +34,7 @@ const ManageProducts = () => {
                         </Row>
                         <hr />
                         {
-                            products.map(product => <ManageProduct handleDeleteProduct={handleDeleteProduct} key={product._id} product={product}></ManageProduct>)
+                            Services.map(Service => <ManageService handleDeleteService={handleDeleteService} key={Service._id} Service={Service}></ManageService>)
                         }
                     </Card.Body>
                 </Card>
@@ -44,4 +44,4 @@ const ManageProducts = () => {
     );
 };
 
-export default ManageProducts;
+export default ManageServices;
