@@ -1,0 +1,9 @@
+body {
+    overflow-x:hidden;
+}
+.card-gap{
+    margin-bottom:20px;
+}
+.loading{
+    margin-top: 30px;
+}

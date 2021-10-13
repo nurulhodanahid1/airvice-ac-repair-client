@@ -1,0 +1,22 @@
+.google-icon img{
+    width: 35px;
+    height: 35px;
+}
+.login-btn{
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 400;
+    border: 2px solid #157347 !important;
+    padding: 5px 20px !important;
+}
+.login-btn:hover{
+    color: #4285F4;
+}
+
+
+/* @media only screen and (max-width: 1100px) {
+    .user-form input {
+        margin-left: 200px;
+    }
+} */
