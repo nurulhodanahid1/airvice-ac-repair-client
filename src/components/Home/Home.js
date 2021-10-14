@@ -5,6 +5,9 @@ import './Home.css';
 import { useHistory } from 'react-router-dom';
 import Main from './Main/Main';
 import Reviews from './Reviews/Reviews';
+import Engineers from './Engineers/Engineers';
+import Footer from './Footer/Footer';
+import About from './About/About';
 
 const Header = () => {
     const [services, setServices] = useState([]);
@@ -36,6 +39,9 @@ const Header = () => {
                 </Container>
             </div>
             <Reviews></Reviews>
+            <Engineers></Engineers>
+            <About></About>
+            <Footer></Footer>
         </main>
     );
 };

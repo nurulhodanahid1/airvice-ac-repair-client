@@ -1,0 +1,14 @@
+.footer-area ul li{
+    list-style: none;
+}
+.footer-item{
+    font-size:16px !important;
+    color:#fff !important;
+}
+.footer-item:hover{
+    color: #37BC9B !important;
+}
+.footer-area{
+    background-color: #122A48;
+    color: #fff;
+}

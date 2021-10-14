@@ -2,6 +2,7 @@ import React, {useContext} from 'react';
 import { useForm } from "react-hook-form";
 import { Col, Row, Container} from 'react-bootstrap';
 import {UserContext} from '../../App';
+import Footer from '../Home/Footer/Footer';
 
 const AddReviews = () => {
     const [signInUser, setSignInUser] = useContext(UserContext);
@@ -48,6 +49,7 @@ const AddReviews = () => {
                 </Row>
             </form>
             </Container>
+            <Footer></Footer>
         </div>
     );
 };

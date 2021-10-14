@@ -3,6 +3,7 @@ import { Card, Col, Row, Container } from 'react-bootstrap';
 import { UserContext } from '../../App';
 import './Orders.css'
 import UserOrders from '../UserOrders/UserOrders';
+import Footer from '../Home/Footer/Footer';
 
 const Orders = () => {
     const [signInUser, setSignInUser] = useContext(UserContext);
@@ -32,6 +33,7 @@ const Orders = () => {
                     </Card.Body>
                 </Card>
             </Container>
+            <Footer></Footer>
         </div>
     );
 };
