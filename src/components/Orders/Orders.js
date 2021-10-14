@@ -23,7 +23,7 @@ const Orders = () => {
                     <Card.Body>
                         <Row>
                             <Col><h5>Description</h5></Col>
-                            <Col><h5>Quantity</h5></Col>
+                            <Col><h5>Email</h5></Col>
                             <Col><h5>Price</h5></Col>
                         </Row>
                         <hr />

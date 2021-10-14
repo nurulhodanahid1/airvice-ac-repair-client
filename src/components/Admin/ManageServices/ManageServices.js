@@ -28,7 +28,7 @@ const ManageServices = () => {
                     <Card.Body>
                         <Row>
                             <Col>Name</Col>
-                            <Col>Quantity</Col>
+                            <Col></Col>
                             <Col>Price</Col>
                             <Col>Action</Col>
                         </Row>
