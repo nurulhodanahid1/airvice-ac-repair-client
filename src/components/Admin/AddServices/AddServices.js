@@ -17,7 +17,7 @@ const AddServices = () => {
             imageURL: imageURL
         };
         console.log("data", serviceData);
-        const url = `http://localhost:5000/addServices`;
+        const url = `https://polar-mesa-01780.herokuapp.com/addServices`;
         fetch(url, {
             method: 'POST',
             headers: {

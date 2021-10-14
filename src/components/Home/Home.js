@@ -12,7 +12,7 @@ import About from './About/About';
 const Header = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/services")
+        fetch("https://polar-mesa-01780.herokuapp.com/services")
             .then(response => response.json())
             .then(data => {
                 setServices(data);

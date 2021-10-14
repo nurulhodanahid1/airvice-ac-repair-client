@@ -9,6 +9,7 @@ const Engineer = (props) => {
             <Card className="align-items-center p-3" style={{ width: '18rem' }}>
                 <Card.Img className="eng-img" variant="top" src={imageURL} />
                 <Card.Body>
+                    <p className="text-center">Engineer</p>
                     <Card.Title>{name}</Card.Title>
                     <Card.Text>{email}</Card.Text>
                 </Card.Body>

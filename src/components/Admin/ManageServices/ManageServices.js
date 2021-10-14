@@ -5,12 +5,12 @@ import { Card, Col, Row, Container } from 'react-bootstrap';
 const ManageServices = () => {
     const [Services, setServices] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/services")
+        fetch("https://polar-mesa-01780.herokuapp.com/services")
             .then(res => res.json())
             .then(data => setServices(data))
     }, []);
     const handleDeleteService = (id) => {
-        fetch(`http://localhost:5000/deleteService/${id}`, {
+        fetch(`https://polar-mesa-01780.herokuapp.com/deleteService/${id}`, {
             method: "DELETE"
         })
             .then(res => res.json())

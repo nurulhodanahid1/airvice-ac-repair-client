@@ -1,7 +1,10 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import './Footer.css'
+import './Footer.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhone, faHome, faUsers } from '@fortawesome/free-solid-svg-icons';
+
 
 const Footer = () => {
     return (
@@ -11,9 +14,9 @@ const Footer = () => {
                     <Col>
                         <h3>About</h3>
                         <p>There are many variatio of lorem ipsum available.</p>
-                        <h5>+8801400311262</h5>
-                        <h5>nurulhodanahid1@gmail.com</h5>
-                        <h5>80 Broklyn Golden Street, Usa</h5>
+                        <h5><FontAwesomeIcon icon={faPhone} /> +8801400311262</h5>
+                        <h5><FontAwesomeIcon icon={faUsers} /> nurulhodanahid1@gmail.com</h5>
+                        <h5><FontAwesomeIcon icon={faHome} /> 80 Broklyn Golden Street, Usa</h5>
                     </Col>
                     <Col>
                         <h3>Explore</h3>

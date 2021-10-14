@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './SideBar.css'
+import './SideBar.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCog, faHome, faGripHorizontal, faUserPlus } from '@fortawesome/free-solid-svg-icons';
 
 const SideBar = () => {
     return (
@@ -8,16 +10,16 @@ const SideBar = () => {
             <ul>
                 <li><h2>Dashboard</h2></li>
                 <li>
-                    <Link to="/admin/addServices">Add Services</Link>
+                    <Link to="/admin/addServices"><FontAwesomeIcon className="review-star" icon={faCog} /> Add Services</Link>
                 </li>
                 <li>
-                    <Link to="/admin/manageServices">Manage Services</Link>
+                    <Link to="/admin/manageServices"><FontAwesomeIcon className="review-star" icon={faHome} /> Manage Services</Link>
                 </li>
                 <li>
-                    <Link to="/admin/editServices">Edit Services</Link>
+                    <Link to="/admin/editServices"><FontAwesomeIcon className="review-star" icon={faGripHorizontal} /> Edit Services</Link>
                 </li>
                 <li>
-                    <Link to="/admin/addEngineers">Add Engineers</Link>
+                    <Link to="/admin/addEngineers"><FontAwesomeIcon className="review-star" icon={faUserPlus} /> Add Engineers</Link>
                 </li>
             </ul>
         </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Button, Col, Row } from 'react-bootstrap';
 import './Review.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 
 const Review = (props) => {

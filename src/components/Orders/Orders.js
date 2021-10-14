@@ -10,7 +10,7 @@ const Orders = () => {
     const [userOrders, setUserOrders] = useState();
 
     useEffect(() => {
-        fetch('http://localhost:5000/orders?email='+signInUser.email)
+        fetch('https://polar-mesa-01780.herokuapp.com/orders?email='+signInUser.email)
             .then(res => res.json())
             .then(data => setUserOrders(data))
     }, [])

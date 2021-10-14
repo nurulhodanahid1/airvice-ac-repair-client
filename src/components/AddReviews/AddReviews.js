@@ -15,7 +15,7 @@ const AddReviews = () => {
             ...signInUser
         };
         console.log("data", serviceData);
-        const url = `http://localhost:5000/addReviews`;
+        const url = `https://polar-mesa-01780.herokuapp.com/addReviews`;
         fetch(url, {
             method: 'POST',
             headers: {

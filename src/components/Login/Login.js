@@ -38,7 +38,8 @@ function Login() {
                     name: displayName,
                     email: email,
                     photo: photoURL
-                }
+                };
+                setUserToken();
                 setUser(signedInUser);
                 setSignInUser(signedInUser);
                 history.replace(from);
@@ -48,6 +49,15 @@ function Login() {
                 console.log(err);
                 console.log(err.message)
             })
+    }
+    const setUserToken = () => {
+        firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function(idToken) {
+            sessionStorage.setItem("token", idToken);
+            // Send token to your backend via HTTPS
+            // ...
+          }).catch(function(error) {
+            // Handle error
+          });
     }
     return (
         <div className="login-area text-center">
