@@ -1,0 +1,18 @@
+.admin-menu{
+    background-color: #2962A6;
+    color: #fff;
+    padding: 10px;
+    height: 600px;
+}
+.admin-menu ul li{
+    list-style: none;
+    color: #fff;
+}
+.admin-menu ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+.admin-menu ul li a:hover{
+    text-decoration: underline;
+    color: #37BC9B;
+}
