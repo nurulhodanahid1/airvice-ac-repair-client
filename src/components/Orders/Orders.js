@@ -25,6 +25,8 @@ const Orders = () => {
                             <Col><h5>Description</h5></Col>
                             <Col><h5>Email</h5></Col>
                             <Col><h5>Price</h5></Col>
+                            <Col><h5>Status</h5></Col>
+                            <Col></Col>
                         </Row>
                         <hr />
                         {

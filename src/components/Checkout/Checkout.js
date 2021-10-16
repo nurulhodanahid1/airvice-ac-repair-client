@@ -17,11 +17,12 @@ const Checkout = () => {
     }, []);
     const serviceDetail = services.find(service => service._id === serviceId);
     const orderDate = new Date();
+    const status = "Pending";
     const handleOrderCheckout = () => {
         setOrderCheckout(true);
     };
     const handlePaymentSuccess = (paymentId) => {
-        const newOrder = { ...signInUser, ...serviceDetail, paymentId, orderDate };
+        const newOrder = { ...signInUser, ...serviceDetail, paymentId, orderDate, status };
         delete newOrder._id;
         fetch('https://polar-mesa-01780.herokuapp.com/addOrders', {
             method: 'POST',
@@ -45,13 +46,11 @@ const Checkout = () => {
                                 <Card.Body>
                                     <Row>
                                         <Col><h5>Description</h5></Col>
-                                        <Col><h5>Quantity</h5></Col>
                                         <Col><h5>Price</h5></Col>
                                     </Row>
                                     <hr />
                                     <Row>
                                         <Col><h5>{serviceDetail?.name}</h5></Col>
-                                        <Col><h5>1</h5></Col>
                                         <Col><h5>${serviceDetail?.price}</h5></Col>
                                     </Row>
                                     <hr />

@@ -7,6 +7,7 @@ import { useContext } from 'react';
 import { UserContext } from '../../App';
 import { useHistory, useLocation } from 'react-router-dom';
 import googleIcon from './googleIcon.png'
+import Footer from '../Home/Footer/Footer';
 
 // firebase.initializeApp(firebaseConfig)
 if (!firebase.apps.length) {
@@ -51,18 +52,21 @@ function Login() {
             })
     }
     const setUserToken = () => {
-        firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function(idToken) {
+        firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function (idToken) {
             sessionStorage.setItem("token", idToken);
             // Send token to your backend via HTTPS
             // ...
-          }).catch(function(error) {
+        }).catch(function (error) {
             // Handle error
-          });
+        });
     }
     return (
         <div className="login-area text-center">
-            <h3>Please Log In Here!</h3>
-            <button className="login-btn btn btn-light" onClick={googleSignIn}><span className="google-icon"><img src={googleIcon} alt="" /></span> Login with Google</button>
+            <div className="pb-5">
+                <h3>Please Log In Here!</h3>
+                <button className="login-btn btn btn-light" onClick={googleSignIn}><span className="google-icon"><img src={googleIcon} alt="" /></span> Login with Google</button>
+            </div>
+            <Footer></Footer>
         </div>
     );
 }
